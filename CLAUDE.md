@@ -24,11 +24,15 @@ Pure HTML + Bootstrap 5.0.1 (CDN) + Bootstrap Icons 1.5.0 + Font Awesome 4.7.0 (
 No JavaScript beyond Bootstrap's bundle for navbar toggle.
 
 **Pages:**
+
 - `index.html` — Main portfolio page (bio + project grid)
-- `compass-privacy.html` — Privacy policy for the Compass Android app
-- `metronome-privacy.html` — Privacy policy for the Metronome Android app
+- `compass-privacy.html` — Privacy policy for the Compass Android app (linked from Google Play Store, unrelated to the
+  portfolio)
+- `metronome-privacy.html` — Privacy policy for the Metronome Android app (linked from Google Play Store, unrelated to
+  the portfolio)
 
 **Assets:**
+
 - `img/` — Project screenshots and profile portrait
 - `data/` — Bachelor's thesis PDF (excluded from search crawlers via `robots.txt`)
 - Favicons and `site.webmanifest` at root
