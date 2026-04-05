@@ -9,10 +9,10 @@ There is no build process, package manager, or framework — just plain HTML fil
 
 ## Development
 
-Open HTML files directly in a browser, or use any static file server:
+Open HTML files directly in a browser, or use any static file server run from the `docs/` directory:
 
 ```bash
-python3 -m http.server 8080
+python3 -m http.server 8080 --directory docs
 ```
 
 No build, lint, or test commands exist.
@@ -20,22 +20,24 @@ No build, lint, or test commands exist.
 ## Architecture
 
 **Stack:**
-Pure HTML + Bootstrap 5.0.1 (CDN) + Bootstrap Icons 1.5.0 + Font Awesome 4.7.0 (CDN).
+Pure HTML + Bootstrap 5.3.3 (CDN) + Bootstrap Icons 1.11.3 (CDN).
 No JavaScript beyond Bootstrap's bundle for navbar toggle.
+
+All web content lives in `docs/` — GitHub Pages is configured to serve from that folder.
 
 **Pages:**
 
-- `index.html` — Main portfolio page (bio + project grid)
-- `compass-privacy.html` — Privacy policy for the Compass Android app (linked from Google Play Store, unrelated to the
-  portfolio)
-- `metronome-privacy.html` — Privacy policy for the Metronome Android app (linked from Google Play Store, unrelated to
-  the portfolio)
+- `docs/index.html` — Main portfolio page (bio + project grid)
+- `docs/compass-privacy.html` — Privacy policy for the Compass Android app (linked from Google Play Store,
+  unrelated to the portfolio)
+- `docs/metronome-privacy.html` — Privacy policy for the Metronome Android app (linked from Google Play Store,
+  unrelated to the portfolio)
 
 **Assets:**
 
-- `img/` — Project screenshots and profile portrait
-- `data/` — Bachelor's thesis PDF (excluded from search crawlers via `robots.txt`)
-- Favicons and `site.webmanifest` at root
+- `docs/img/` — Project screenshots and profile portrait
+- `docs/data/` — Bachelor's thesis PDF (excluded from search crawlers via `robots.txt`)
+- Favicons and `site.webmanifest` in `docs/`
 
 ## Code Style
 
