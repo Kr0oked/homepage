@@ -20,8 +20,7 @@ No build, lint, or test commands exist.
 ## Architecture
 
 **Stack:**
-Pure HTML + Bootstrap 5.3.3 (CDN) + Bootstrap Icons 1.11.3 (CDN).
-No JavaScript beyond Bootstrap's bundle for navbar toggle.
+Pure HTML + Bootstrap 5.3.3 (CDN) + Bootstrap Icons 1.11.3 (CDN). No JavaScript.
 
 All web content lives in `docs/` — GitHub Pages is configured to serve from that folder.
 
