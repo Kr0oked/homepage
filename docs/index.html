@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de-DE">
+<html lang="de-DE" data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,11 @@
         crossorigin="anonymous">
 
   <title>Philipp Bobek - Portfolio</title>
+
+  <script>
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-bs-theme', saved);
+  </script>
 
   <style>
     img.card-img-top {
@@ -62,6 +67,9 @@
         <a href="mailto:philipp.bobek@mailbox.org" class="btn btn-outline-light btn-sm">
           <i class="bi bi-envelope" aria-hidden="true"></i><span class="d-none d-sm-inline"> Email</span>
         </a>
+        <button id="theme-toggle" class="btn btn-outline-light btn-sm" aria-label="Farbschema wechseln">
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -409,6 +417,24 @@
     <p class="mb-0">&copy; 2026 Philipp Bobek</p>
   </div>
 </footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const icon = toggle.querySelector('i');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    icon.className = theme === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
+  }
+
+  applyTheme(document.documentElement.getAttribute('data-bs-theme'));
+
+  toggle.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('theme', next);
+  });
+</script>
 
 </body>
 </html>
